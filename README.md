@@ -43,11 +43,9 @@ Simply provide temperature and energy data to run the model:
 ```python
 from mvcp import run_mvcp_model
 
-# Provide temperature and energy data
 temperature = [10, 12, 15, 18, 20, 22, 25, 28, 30, 32, 35]  # example temperature data
 energy = [25, 24, 22, 20, 19, 19, 20, 22, 24, 27, 30]       # example energy consumption data
 
-# Run the model
 results = run_mvcp_model(temperature, energy)
 ```
 
