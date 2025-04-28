@@ -8,7 +8,7 @@ MVCP (Measurement & Validation Change Point Model) is a Python toolkit for analy
 
 - Automatically selects optimal change points based on data patterns
 - Supports 5P model (dual change points), 3P heating model, and 3P cooling model
-- Automatically calculates various diagnostic statistics (R², RMSE, CV, etc.)
+- Automatically calculates various diagnostic statistics (R², RMSE, CV(RMSE), NMBE, etc.)
 - Generates detailed Excel reports
 - Provides a simple API requiring just two parameters (temperature and energy)
 
