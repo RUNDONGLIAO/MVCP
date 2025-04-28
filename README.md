@@ -12,6 +12,12 @@ MVCP (Measurement & Validation Change Point Model) is a Python toolkit for analy
 - Generates detailed Excel reports
 - Provides a simple API requiring just two parameters (temperature and energy)
 
+## Citation
+
+If you use the code derived from it in academic work, please cite:
+
+will be here soon....
+
 ## Installation
 
 ### Via pip
