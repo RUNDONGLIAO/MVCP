@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mvcp"
+version = "0.1.0"
+description = "Model for 5P Change Points - Temperature with energy consumption analysis tool"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "MIT"}
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy>=1.18.0",
+    "pandas>=1.0.0",
+    "scipy>=1.4.0",
+    "openpyxl>=3.0.0",
+    "matplotlib>=3.4.0",
+    "seaborn>=0.11.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/RUNDONGLIAO/mvcp"
+"Bug Tracker" = "https://github.com/RUNDONGLIAO/mvcp/issues"
+
+[tool.setuptools]
+packages = ["mvcp"]
+
+[tool.black]
+line-length = 88
+target-version = ['py36', 'py37', 'py38', 'py39', 'py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.github
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.vscode
+  | _build
+  | build
+  | dist
+  | mvcp.egg-info
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "--cov=mvcp"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203"
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "*.egg-info",
+]
