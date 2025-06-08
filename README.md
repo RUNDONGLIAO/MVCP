@@ -18,22 +18,6 @@ If you use the code derived from it in academic work, please cite:
 
 will be here soon....
 
-## Installation
-
-### Via pip
-
-```bash
-pip install mvcp
-```
-
-### From source
-
-```bash
-git clone https://github.com/RUNDONGLIAO/MVCP.git
-cd MVCP
-pip install -e .
-```
-
 ## Usage
 
 ### Basic Usage
