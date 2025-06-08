@@ -4,7 +4,7 @@ setup(
     name="mvcp",
     version="0.1.0",
     description="Model for 5P Change Points - Temperature with energy consumption analysis tool",
-    author="Your Name",
+    author="Rundong Liao",
     packages=find_packages(),
     install_requires=[
         "numpy",
