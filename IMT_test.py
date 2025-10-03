@@ -13,7 +13,7 @@ def is_admin():
         return False
 
 if not is_admin():
-    print("❌ Administrator privileges required to run this program")
+    print("Administrator privileges required to run this program")
     print("Please right-click Command Prompt and select 'Run as administrator'")
     input("Press Enter to exit...")
     sys.exit()
@@ -27,7 +27,7 @@ ins_dir = r"IMTdata"  # .ins file directory
 ins_files = sorted(pathlib.Path(ins_dir).rglob("*.ins"))
 
 if not ins_files:
-    print("❌ No .ins files found, please check the path.")
+    print("No .ins files found, please check the path.")
     exit()
 
 print(f"Found {len(ins_files)} .ins files, starting execution...\n")
@@ -37,7 +37,7 @@ total_time = 0
 
 # === Loop through each .ins file and measure execution time ===
 for ins_file in ins_files:
-    print(f"▶ Running: {ins_file}")
+    print(f"Running: {ins_file}")
     
     # Select executable based on path
     if "5P" in str(ins_file):
@@ -49,7 +49,7 @@ for ins_file in ins_files:
     
     # Check if IMT program exists
     if not pathlib.Path(exe_path).exists():
-        print(f"  ❌ Program not found: {exe_path}, skipping")
+        print(f"Program not found: {exe_path}, skipping")
         print()
         continue
     
@@ -80,7 +80,7 @@ for ins_file in ins_files:
                 print(f"  Error output: {stderr}")
         except subprocess.TimeoutExpired:
             process.kill()
-            print(f"  ❌ Program execution timeout, skipping")
+            print(f"Program execution timeout, skipping")
             print()
             continue
         
@@ -89,31 +89,32 @@ for ins_file in ins_files:
             raise subprocess.CalledProcessError(process.returncode, exe_path)
             
     except subprocess.CalledProcessError as e:
-        print(f"  ❌ Execution error, skipping: {e}")
+        print(f"Execution error, skipping: {e}")
         print()
         continue
     except FileNotFoundError as e:
-        print(f"  ❌ Executable file not found, skipping: {e}")
+        print(f"Executable file not found, skipping: {e}")
         print()
         continue
     except Exception as e:
-        print(f"  ❌ Unknown error, skipping: {e}")
+        print(f"Unknown error, skipping: {e}")
         print()
         continue
     
     elapsed = time.perf_counter() - start_time
-    print(f"  ✅ Elapsed time: {elapsed:.3f} seconds")
+    print(f"Elapsed time: {elapsed:.3f} seconds")
     successful_runs += 1
     total_time += elapsed
     print()
 
-print(f"✅ All executions completed")
+print(f"All executions completed")
 print(f"Successful runs: {successful_runs}/{len(ins_files)} files")
 if successful_runs > 0:
     print(f"Total time: {total_time:.3f} seconds")
     print(f"Average time: {total_time/successful_runs:.3f} seconds")
-print(f"✅ All executions completed")
+print(f"All executions completed")
 print(f"Successful runs: {successful_runs}/{len(ins_files)} files")
 if successful_runs > 0:
     print(f"Total time: {total_time:.3f} seconds")
     print(f"Average time: {total_time/successful_runs:.3f} seconds")
+
